@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: news-crawler  # 이 애플리케이션의 이름
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/XEPDB1  # 오라클 DB 접속 주소 (PDB 명 포함)
+    username: MYNEWS                             # 오라클 사용자 이름
+    password: mynews123                         # 오라클 사용자 비밀번호
+    driver-class-name: oracle.jdbc.OracleDriver  # 오라클 JDBC 드라이버 클래스
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # 앱 실행 시 DB 스키마 자동 생성/수정 (none/create/update 등)
+    show-sql: true      # 실행되는 SQL 쿼리를 로그로 출력
+    database-platform: org.hibernate.dialect.OracleDialect # 오라클 Hibernate
+
+# ⚠️ 필요에 따라 추가 가능한 옵션 (예: 로깅 레벨)
+# logging:
+#   level:
+#     org.hibernate.SQL: debug
+#     org.hibernate.type.descriptor.sql.BasicBinder: trace
